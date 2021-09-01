@@ -68,7 +68,7 @@ class Block {
 
 		?>
 		<div class="<?php echo $class_name; ?>">
-			<h2>Post Counts</h2>
+			<h2><?php esc_html_e('Post Counts','text-domain');?></h2>
 			<?php
 			foreach ( $post_types as $post_type_slug ) :
 				$post_type_object = get_post_type_object( $post_type_slug );
@@ -82,9 +82,9 @@ class Block {
 				);
 
 				?>
-				<p><?php echo 'There are ' . $post_count . ' ' . $post_type_object->labels->name . '.'; ?></p>
+				<p><?php echo esc_html__('There are','text-domain') .' '. esc_html($post_count) . ' ' . esc_html($post_type_object->labels->name) . '.'; ?></p>
 			<?php endforeach; ?>
-			<p><?php echo 'The current post ID is ' . $_GET['post_id'] . '.'; ?></p>
+			<p><?php echo esc_html__('The current post ID is','text-domain') .' '. esc_html($_GET['post_id']) . '.'; ?></p>
 		</div>
 		<?php
 
