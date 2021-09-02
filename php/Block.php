@@ -67,7 +67,7 @@ class Block {
 		ob_start();
 
 		?>
-		<div class="<?php echo $class_name; ?>">
+		<div class="<?php echo esc_attr($class_name); ?>">
 			<h2><?php esc_html_e('Post Counts','text-domain');?></h2>
 			<?php
 			foreach ( $post_types as $post_type_slug ) :
